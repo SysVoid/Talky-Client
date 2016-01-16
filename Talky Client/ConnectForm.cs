@@ -59,7 +59,13 @@ namespace Talky_Client
                 return;
             }
 
-            ServerConnection connection = new ServerConnection(host, port, username);
+            string password = "";
+            if (!string.IsNullOrEmpty(_passwordInput.Text) && !string.IsNullOrWhiteSpace(_passwordInput.Text))
+            {
+                password = _passwordInput.Text;
+            }
+
+            ServerConnection connection = new ServerConnection(host, port, username, password);
             new ChatWindow().Show();
             Hide();
         }

@@ -21,7 +21,7 @@ namespace Talky_Client.Connection
         private static ServerConnection _currentConnection { get; set; }
         private static object _lock = new object();
 
-        public ServerConnection(string host, int port, string username)
+        public ServerConnection(string host, int port, string username, string password)
         {
             Host = host;
             Port = port;
@@ -34,7 +34,13 @@ namespace Talky_Client.Connection
                 Reader = new StreamReader(Client.GetStream());
                 Writer = new StreamWriter(Client.GetStream());
 
-                Writer.WriteLine("M:/name " + username);
+                if (password.Equals(""))
+                {
+                    Writer.WriteLine("M:/name " + username);
+                } else
+                {
+                    Writer.WriteLine("M:/auth " + username + " " + password);
+                }
                 Writer.Flush();
 
                 Writer.WriteLine("S:Client");

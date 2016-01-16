@@ -5,20 +5,20 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Talky_Client.Connection;
+using System.Threading;
 
 namespace Talky_Client
 {
-    public partial class ChatWindow : Form
+    public partial class Oldchatwindow : Form
     {
 
         private ServerConnection _connection { get; set; }
         private Thread _listeningThread { get; set; }
 
-        public ChatWindow()
+        public Oldchatwindow()
         {
             InitializeComponent();
         }
@@ -36,6 +36,7 @@ namespace Talky_Client
                 return;
             }
 
+            _statusToolStripLabel.Text = "Connected";
             _connection = connection;
 
             _listeningThread = new Thread(new ThreadStart(Listen));
@@ -64,16 +65,9 @@ namespace Talky_Client
 
                 if (line.StartsWith("M:"))
                 {
-                    ChatMessage theMessage = new ChatMessage(line.Substring(2));
-
-                    _messageLog.Invoke((MethodInvoker) delegate
+                    _output.Invoke((MethodInvoker) delegate
                     {
-                        foreach (string piece in theMessage.Pieces.Keys)
-                        {
-                            _messageLog.SelectionColor = theMessage.Pieces[piece];
-                            _messageLog.AppendText(piece);
-                        }
-                        _messageLog.AppendText(Environment.NewLine);
+                        _output.AppendText(line.Substring(2) + Environment.NewLine);
                     });
                 } else if (line.StartsWith("S:ChannelList:"))
                 {
@@ -94,16 +88,6 @@ namespace Talky_Client
                     _channelLabel.Invoke((MethodInvoker) delegate
                     {
                         _channelLabel.Text = channel;
-                    });
-
-                    _titleLabel.Invoke((MethodInvoker) delegate
-                    {
-                        _titleLabel.Text = channel + " on " + _connection.Host + ":" + _connection.Port;
-                    });
-
-                    Invoke((MethodInvoker) delegate
-                    {
-                        Text = channel + " on " + _connection.Host + ":" + _connection.Port;
                     });
                 } else if (line.StartsWith("S:Account:"))
                 {
@@ -131,12 +115,13 @@ namespace Talky_Client
                 }
             }
 
-            MessageBox.Show("Lost connection to Talky Chat Server!", "Connection Error");
+            _statusToolStripLabel.Text = "Connection Lost!";
+            Thread.Sleep(1500);
             ConnectForm.Instance.Show();
             Close();
         }
 
-        private void _channelsButton_Click(object sender, EventArgs e)
+        private void _channelListButton_Click(object sender, EventArgs e)
         {
             _connection.Writer.WriteLine("S:ChannelList");
             _connection.Writer.Flush();

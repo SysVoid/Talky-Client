@@ -43,16 +43,20 @@
             this._hostLabel = new System.Windows.Forms.Label();
             this._iconImage = new System.Windows.Forms.PictureBox();
             this._titleLabel = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this._passwordInput = new System.Windows.Forms.TextBox();
+            this._passwordLabel = new System.Windows.Forms.Label();
             this._connectionDetailsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._usernameErrorImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._portErrorImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._hostErrorImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._iconImage)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // _connectButton
             // 
-            this._connectButton.Location = new System.Drawing.Point(456, 236);
+            this._connectButton.Location = new System.Drawing.Point(458, 287);
             this._connectButton.Name = "_connectButton";
             this._connectButton.Size = new System.Drawing.Size(119, 23);
             this._connectButton.TabIndex = 0;
@@ -63,7 +67,7 @@
             // _quitButton
             // 
             this._quitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this._quitButton.Location = new System.Drawing.Point(12, 236);
+            this._quitButton.Location = new System.Drawing.Point(14, 287);
             this._quitButton.Name = "_quitButton";
             this._quitButton.Size = new System.Drawing.Size(119, 23);
             this._quitButton.TabIndex = 1;
@@ -83,7 +87,7 @@
             this._connectionDetailsGroupBox.Controls.Add(this._hostInput);
             this._connectionDetailsGroupBox.Controls.Add(this._hostLabel);
             this._connectionDetailsGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._connectionDetailsGroupBox.Location = new System.Drawing.Point(12, 76);
+            this._connectionDetailsGroupBox.Location = new System.Drawing.Point(14, 79);
             this._connectionDetailsGroupBox.Name = "_connectionDetailsGroupBox";
             this._connectionDetailsGroupBox.Size = new System.Drawing.Size(563, 140);
             this._connectionDetailsGroupBox.TabIndex = 5;
@@ -93,7 +97,7 @@
             // _usernameErrorImage
             // 
             this._usernameErrorImage.Image = ((System.Drawing.Image)(resources.GetObject("_usernameErrorImage.Image")));
-            this._usernameErrorImage.Location = new System.Drawing.Point(529, 90);
+            this._usernameErrorImage.Location = new System.Drawing.Point(531, 93);
             this._usernameErrorImage.Name = "_usernameErrorImage";
             this._usernameErrorImage.Size = new System.Drawing.Size(28, 30);
             this._usernameErrorImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -103,7 +107,7 @@
             // _portErrorImage
             // 
             this._portErrorImage.Image = ((System.Drawing.Image)(resources.GetObject("_portErrorImage.Image")));
-            this._portErrorImage.Location = new System.Drawing.Point(529, 62);
+            this._portErrorImage.Location = new System.Drawing.Point(531, 65);
             this._portErrorImage.Name = "_portErrorImage";
             this._portErrorImage.Size = new System.Drawing.Size(28, 30);
             this._portErrorImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -113,7 +117,7 @@
             // _hostErrorImage
             // 
             this._hostErrorImage.Image = ((System.Drawing.Image)(resources.GetObject("_hostErrorImage.Image")));
-            this._hostErrorImage.Location = new System.Drawing.Point(529, 34);
+            this._hostErrorImage.Location = new System.Drawing.Point(531, 37);
             this._hostErrorImage.Name = "_hostErrorImage";
             this._hostErrorImage.Size = new System.Drawing.Size(28, 30);
             this._hostErrorImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -122,7 +126,7 @@
             // 
             // _usernameInput
             // 
-            this._usernameInput.Location = new System.Drawing.Point(99, 94);
+            this._usernameInput.Location = new System.Drawing.Point(101, 97);
             this._usernameInput.Name = "_usernameInput";
             this._usernameInput.Size = new System.Drawing.Size(423, 22);
             this._usernameInput.TabIndex = 5;
@@ -131,7 +135,7 @@
             // _usernameLabel
             // 
             this._usernameLabel.AutoSize = true;
-            this._usernameLabel.Location = new System.Drawing.Point(22, 97);
+            this._usernameLabel.Location = new System.Drawing.Point(24, 100);
             this._usernameLabel.Name = "_usernameLabel";
             this._usernameLabel.Size = new System.Drawing.Size(71, 16);
             this._usernameLabel.TabIndex = 4;
@@ -139,7 +143,7 @@
             // 
             // _portInput
             // 
-            this._portInput.Location = new System.Drawing.Point(99, 66);
+            this._portInput.Location = new System.Drawing.Point(101, 69);
             this._portInput.Name = "_portInput";
             this._portInput.Size = new System.Drawing.Size(423, 22);
             this._portInput.TabIndex = 3;
@@ -148,7 +152,7 @@
             // _portLabel
             // 
             this._portLabel.AutoSize = true;
-            this._portLabel.Location = new System.Drawing.Point(18, 69);
+            this._portLabel.Location = new System.Drawing.Point(20, 72);
             this._portLabel.Name = "_portLabel";
             this._portLabel.Size = new System.Drawing.Size(75, 16);
             this._portLabel.TabIndex = 2;
@@ -156,7 +160,7 @@
             // 
             // _hostInput
             // 
-            this._hostInput.Location = new System.Drawing.Point(99, 38);
+            this._hostInput.Location = new System.Drawing.Point(101, 41);
             this._hostInput.Name = "_hostInput";
             this._hostInput.Size = new System.Drawing.Size(423, 22);
             this._hostInput.TabIndex = 1;
@@ -165,7 +169,7 @@
             // _hostLabel
             // 
             this._hostLabel.AutoSize = true;
-            this._hostLabel.Location = new System.Drawing.Point(7, 41);
+            this._hostLabel.Location = new System.Drawing.Point(9, 44);
             this._hostLabel.Name = "_hostLabel";
             this._hostLabel.Size = new System.Drawing.Size(86, 16);
             this._hostLabel.TabIndex = 0;
@@ -174,7 +178,7 @@
             // _iconImage
             // 
             this._iconImage.Image = ((System.Drawing.Image)(resources.GetObject("_iconImage.Image")));
-            this._iconImage.Location = new System.Drawing.Point(208, 5);
+            this._iconImage.Location = new System.Drawing.Point(210, 8);
             this._iconImage.Name = "_iconImage";
             this._iconImage.Size = new System.Drawing.Size(64, 64);
             this._iconImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -185,11 +189,40 @@
             // 
             this._titleLabel.AutoSize = true;
             this._titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._titleLabel.Location = new System.Drawing.Point(278, 18);
+            this._titleLabel.Location = new System.Drawing.Point(280, 21);
             this._titleLabel.Name = "_titleLabel";
             this._titleLabel.Size = new System.Drawing.Size(101, 39);
             this._titleLabel.TabIndex = 6;
             this._titleLabel.Text = "Talky";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this._passwordInput);
+            this.groupBox1.Controls.Add(this._passwordLabel);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(14, 225);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(563, 56);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Authentication (optional)";
+            // 
+            // _passwordInput
+            // 
+            this._passwordInput.Location = new System.Drawing.Point(101, 24);
+            this._passwordInput.Name = "_passwordInput";
+            this._passwordInput.PasswordChar = '•';
+            this._passwordInput.Size = new System.Drawing.Size(423, 22);
+            this._passwordInput.TabIndex = 1;
+            // 
+            // _passwordLabel
+            // 
+            this._passwordLabel.AutoSize = true;
+            this._passwordLabel.Location = new System.Drawing.Point(27, 27);
+            this._passwordLabel.Name = "_passwordLabel";
+            this._passwordLabel.Size = new System.Drawing.Size(68, 16);
+            this._passwordLabel.TabIndex = 0;
+            this._passwordLabel.Text = "Password";
             // 
             // ConnectForm
             // 
@@ -198,17 +231,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.CancelButton = this._quitButton;
-            this.ClientSize = new System.Drawing.Size(587, 271);
+            this.ClientSize = new System.Drawing.Size(587, 318);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this._titleLabel);
             this.Controls.Add(this._iconImage);
             this.Controls.Add(this._connectionDetailsGroupBox);
             this.Controls.Add(this._quitButton);
             this.Controls.Add(this._connectButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(603, 310);
+            this.MaximumSize = new System.Drawing.Size(603, 357);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(603, 310);
+            this.MinimumSize = new System.Drawing.Size(603, 357);
             this.Name = "ConnectForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -220,6 +255,8 @@
             ((System.ComponentModel.ISupportInitialize)(this._portErrorImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._hostErrorImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._iconImage)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,6 +278,9 @@
         private System.Windows.Forms.PictureBox _hostErrorImage;
         private System.Windows.Forms.PictureBox _usernameErrorImage;
         private System.Windows.Forms.PictureBox _portErrorImage;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox _passwordInput;
+        private System.Windows.Forms.Label _passwordLabel;
     }
 }
 
