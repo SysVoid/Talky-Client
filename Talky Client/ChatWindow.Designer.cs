@@ -35,17 +35,17 @@
             this._disconnectButton = new System.Windows.Forms.Button();
             this._titleLabel = new System.Windows.Forms.Label();
             this._informationPanel = new System.Windows.Forms.Panel();
+            this._accountRoleLabel = new System.Windows.Forms.Label();
+            this._usernameTagLabel = new System.Windows.Forms.Label();
+            this._accountUsernameLabel = new System.Windows.Forms.Label();
+            this._usernameLabel = new System.Windows.Forms.Label();
+            this._accountLabel = new System.Windows.Forms.Label();
+            this._channelTagLabel = new System.Windows.Forms.Label();
+            this._channelLabel = new System.Windows.Forms.Label();
             this._messageInput = new System.Windows.Forms.TextBox();
             this._sendButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this._messageLog = new System.Windows.Forms.RichTextBox();
-            this._accountRoleLabel = new System.Windows.Forms.Label();
-            this._accountUsernameLabel = new System.Windows.Forms.Label();
-            this._accountLabel = new System.Windows.Forms.Label();
-            this._channelLabel = new System.Windows.Forms.Label();
-            this._channelTagLabel = new System.Windows.Forms.Label();
-            this._usernameLabel = new System.Windows.Forms.Label();
-            this._usernameTagLabel = new System.Windows.Forms.Label();
             this._controlPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._iconImage)).BeginInit();
             this._informationPanel.SuspendLayout();
@@ -126,6 +126,79 @@
             this._informationPanel.Size = new System.Drawing.Size(205, 429);
             this._informationPanel.TabIndex = 1;
             // 
+            // _accountRoleLabel
+            // 
+            this._accountRoleLabel.AutoSize = true;
+            this._accountRoleLabel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._accountRoleLabel.Location = new System.Drawing.Point(15, 157);
+            this._accountRoleLabel.Name = "_accountRoleLabel";
+            this._accountRoleLabel.Size = new System.Drawing.Size(44, 18);
+            this._accountRoleLabel.TabIndex = 19;
+            this._accountRoleLabel.Text = "Role";
+            this._accountRoleLabel.Visible = false;
+            // 
+            // _usernameTagLabel
+            // 
+            this._usernameTagLabel.AutoSize = true;
+            this._usernameTagLabel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._usernameTagLabel.Location = new System.Drawing.Point(15, 13);
+            this._usernameTagLabel.Name = "_usernameTagLabel";
+            this._usernameTagLabel.Size = new System.Drawing.Size(98, 18);
+            this._usernameTagLabel.TabIndex = 13;
+            this._usernameTagLabel.Text = "Username";
+            // 
+            // _accountUsernameLabel
+            // 
+            this._accountUsernameLabel.AutoSize = true;
+            this._accountUsernameLabel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._accountUsernameLabel.Location = new System.Drawing.Point(15, 139);
+            this._accountUsernameLabel.Name = "_accountUsernameLabel";
+            this._accountUsernameLabel.Size = new System.Drawing.Size(90, 18);
+            this._accountUsernameLabel.TabIndex = 18;
+            this._accountUsernameLabel.Text = "Username";
+            this._accountUsernameLabel.Visible = false;
+            // 
+            // _usernameLabel
+            // 
+            this._usernameLabel.AutoSize = true;
+            this._usernameLabel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._usernameLabel.Location = new System.Drawing.Point(15, 33);
+            this._usernameLabel.Name = "_usernameLabel";
+            this._usernameLabel.Size = new System.Drawing.Size(90, 18);
+            this._usernameLabel.TabIndex = 14;
+            this._usernameLabel.Text = "Loading...";
+            // 
+            // _accountLabel
+            // 
+            this._accountLabel.AutoSize = true;
+            this._accountLabel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._accountLabel.Location = new System.Drawing.Point(15, 119);
+            this._accountLabel.Name = "_accountLabel";
+            this._accountLabel.Size = new System.Drawing.Size(78, 18);
+            this._accountLabel.TabIndex = 17;
+            this._accountLabel.Text = "Account";
+            this._accountLabel.Visible = false;
+            // 
+            // _channelTagLabel
+            // 
+            this._channelTagLabel.AutoSize = true;
+            this._channelTagLabel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._channelTagLabel.Location = new System.Drawing.Point(15, 66);
+            this._channelTagLabel.Name = "_channelTagLabel";
+            this._channelTagLabel.Size = new System.Drawing.Size(79, 18);
+            this._channelTagLabel.TabIndex = 15;
+            this._channelTagLabel.Text = "Channel";
+            // 
+            // _channelLabel
+            // 
+            this._channelLabel.AutoSize = true;
+            this._channelLabel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._channelLabel.Location = new System.Drawing.Point(15, 86);
+            this._channelLabel.Name = "_channelLabel";
+            this._channelLabel.Size = new System.Drawing.Size(90, 18);
+            this._channelLabel.TabIndex = 16;
+            this._channelLabel.Text = "Loading...";
+            // 
             // _messageInput
             // 
             this._messageInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -167,6 +240,7 @@
             this._messageLog.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this._messageLog.Dock = System.Windows.Forms.DockStyle.Fill;
             this._messageLog.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._messageLog.HideSelection = false;
             this._messageLog.Location = new System.Drawing.Point(0, 0);
             this._messageLog.Name = "_messageLog";
             this._messageLog.ReadOnly = true;
@@ -174,79 +248,6 @@
             this._messageLog.Size = new System.Drawing.Size(729, 362);
             this._messageLog.TabIndex = 6;
             this._messageLog.Text = "";
-            // 
-            // _accountRoleLabel
-            // 
-            this._accountRoleLabel.AutoSize = true;
-            this._accountRoleLabel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._accountRoleLabel.Location = new System.Drawing.Point(15, 157);
-            this._accountRoleLabel.Name = "_accountRoleLabel";
-            this._accountRoleLabel.Size = new System.Drawing.Size(44, 18);
-            this._accountRoleLabel.TabIndex = 19;
-            this._accountRoleLabel.Text = "Role";
-            this._accountRoleLabel.Visible = false;
-            // 
-            // _accountUsernameLabel
-            // 
-            this._accountUsernameLabel.AutoSize = true;
-            this._accountUsernameLabel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._accountUsernameLabel.Location = new System.Drawing.Point(15, 139);
-            this._accountUsernameLabel.Name = "_accountUsernameLabel";
-            this._accountUsernameLabel.Size = new System.Drawing.Size(90, 18);
-            this._accountUsernameLabel.TabIndex = 18;
-            this._accountUsernameLabel.Text = "Username";
-            this._accountUsernameLabel.Visible = false;
-            // 
-            // _accountLabel
-            // 
-            this._accountLabel.AutoSize = true;
-            this._accountLabel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._accountLabel.Location = new System.Drawing.Point(15, 119);
-            this._accountLabel.Name = "_accountLabel";
-            this._accountLabel.Size = new System.Drawing.Size(78, 18);
-            this._accountLabel.TabIndex = 17;
-            this._accountLabel.Text = "Account";
-            this._accountLabel.Visible = false;
-            // 
-            // _channelLabel
-            // 
-            this._channelLabel.AutoSize = true;
-            this._channelLabel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._channelLabel.Location = new System.Drawing.Point(15, 86);
-            this._channelLabel.Name = "_channelLabel";
-            this._channelLabel.Size = new System.Drawing.Size(90, 18);
-            this._channelLabel.TabIndex = 16;
-            this._channelLabel.Text = "Loading...";
-            // 
-            // _channelTagLabel
-            // 
-            this._channelTagLabel.AutoSize = true;
-            this._channelTagLabel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._channelTagLabel.Location = new System.Drawing.Point(15, 66);
-            this._channelTagLabel.Name = "_channelTagLabel";
-            this._channelTagLabel.Size = new System.Drawing.Size(79, 18);
-            this._channelTagLabel.TabIndex = 15;
-            this._channelTagLabel.Text = "Channel";
-            // 
-            // _usernameLabel
-            // 
-            this._usernameLabel.AutoSize = true;
-            this._usernameLabel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._usernameLabel.Location = new System.Drawing.Point(15, 33);
-            this._usernameLabel.Name = "_usernameLabel";
-            this._usernameLabel.Size = new System.Drawing.Size(90, 18);
-            this._usernameLabel.TabIndex = 14;
-            this._usernameLabel.Text = "Loading...";
-            // 
-            // _usernameTagLabel
-            // 
-            this._usernameTagLabel.AutoSize = true;
-            this._usernameTagLabel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._usernameTagLabel.Location = new System.Drawing.Point(15, 13);
-            this._usernameTagLabel.Name = "_usernameTagLabel";
-            this._usernameTagLabel.Size = new System.Drawing.Size(98, 18);
-            this._usernameTagLabel.TabIndex = 13;
-            this._usernameTagLabel.Text = "Username";
             // 
             // ChatWindow
             // 
