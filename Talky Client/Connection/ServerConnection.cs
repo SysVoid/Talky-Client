@@ -47,6 +47,8 @@ namespace Talky_Client.Connection
                 Writer.Flush();
                 Writer.WriteLine("S:Account");
                 Writer.Flush();
+                Writer.WriteLine("S:ChannelClientList");
+                Writer.Flush();
             } catch
             {
                 Client = null;

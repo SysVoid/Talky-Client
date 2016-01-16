@@ -75,10 +75,24 @@ namespace Talky_Client
                         }
                         _messageLog.AppendText(Environment.NewLine);
                     });
+
+                    if (_connection.Client.Connected)
+                    {
+                        _connection.Writer.WriteLine("S:ChannelClientList");
+                        _connection.Writer.Flush();
+                    }
                 } else if (line.StartsWith("S:ChannelList:"))
                 {
                     string[] channels = line.Substring(14).Split(new char[] { ';' });
                     new ChannelList(channels).ShowDialog();
+                } else if (line.StartsWith("S:ChannelClientList:"))
+                {
+                    string[] clients = line.Substring(20).Split(new char[] { ';' });
+                    _clientListComboBox.Invoke((MethodInvoker) delegate
+                    {
+                        _clientListComboBox.Items.Clear();
+                        _clientListComboBox.Items.AddRange(clients);
+                    });
                 } else if (line.StartsWith("S:Client:"))
                 {
                     string[] data = line.Substring(9).Split(new char[] { ';' });
@@ -86,24 +100,14 @@ namespace Talky_Client
                     string muted = data[1];
                     string channel = data[2];
 
-                    _usernameLabel.Invoke((MethodInvoker) delegate
-                    {
-                        _usernameLabel.Text = username;
-                    });
-
-                    _channelLabel.Invoke((MethodInvoker) delegate
-                    {
-                        _channelLabel.Text = channel;
-                    });
-
                     _titleLabel.Invoke((MethodInvoker) delegate
                     {
-                        _titleLabel.Text = channel + " on " + _connection.Host + ":" + _connection.Port;
+                        _titleLabel.Text = "[" + username + "] " + channel + " on " + _connection.Host + ":" + _connection.Port;
                     });
 
                     Invoke((MethodInvoker) delegate
                     {
-                        Text = channel + " on " + _connection.Host + ":" + _connection.Port;
+                        Text = "[" + username + "] " + channel + " on " + _connection.Host + ":" + _connection.Port;
                     });
                 } else if (line.StartsWith("S:Account:"))
                 {
@@ -128,6 +132,9 @@ namespace Talky_Client
                         _accountRoleLabel.Visible = true;
                         _accountRoleLabel.Text = role;
                     });
+
+                    _connection.Writer.WriteLine("S:ChannelClientList");
+                    _connection.Writer.Flush();
                 }
             }
 
@@ -139,6 +146,8 @@ namespace Talky_Client
         private void _channelsButton_Click(object sender, EventArgs e)
         {
             _connection.Writer.WriteLine("S:ChannelList");
+            _connection.Writer.Flush();
+            _connection.Writer.WriteLine("S:ChannelClientList");
             _connection.Writer.Flush();
         }
 
@@ -175,6 +184,8 @@ namespace Talky_Client
             _connection.Writer.WriteLine("S:Client");
             _connection.Writer.Flush();
             _connection.Writer.WriteLine("S:Account");
+            _connection.Writer.Flush();
+            _connection.Writer.WriteLine("S:ChannelClientList");
             _connection.Writer.Flush();
             _messageInput.Text = "";
         }
